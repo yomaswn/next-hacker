@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
 import Error from 'next/error';
-import Link from 'next/link';
 
 import Layout from '../components/Layout';
 import CommentList from '../components/CommentList';
@@ -29,7 +28,7 @@ export class story extends Component {
       return <Error statusCode={503} />;
     }
     return (
-      <Layout title={story.title}>
+      <Layout title={story.title} backButton={true}>
         <main>
           <h1 className='story-title'>
             <a href={story.url}>{story.title}</a>
