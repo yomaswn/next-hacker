@@ -20,10 +20,6 @@ const Layout = ({ children, title, description, backButton }) => {
       <Head>
         <title>{title || 'Next Hacker'}</title>
         <meta name='description' content={description} />
-        <link
-          rel='stylesheet'
-          href='https://unpkg.com/nprogress@0.2.0/nprogress.css'
-        />
       </Head>
       <div className='container'>
         <nav>
@@ -41,8 +37,14 @@ const Layout = ({ children, title, description, backButton }) => {
 
         {children}
 
+        <footer>Yoma Sofwan &copy; {new Date().getFullYear()}</footer>
+
         <style jsx>
           {`
+            footer {
+              padding: 1em;
+              text-align: center;
+            }
             .main-title {
             }
             .container {
@@ -76,14 +78,6 @@ const Layout = ({ children, title, description, backButton }) => {
             body {
               background: white;
               font-family: Verdana, Geneva, sans-serif;
-            }
-          `}
-        </style>
-        <style global jsx>
-          {`
-            body {
-              background: #f0f0f0;
-              margin: 0;
             }
           `}
         </style>

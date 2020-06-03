@@ -30,4 +30,4 @@ $ now
 
 ### Live Demo
 
-https://next-hacker-murex.now.sh/
+https://next-hacker.yomaswn.now.sh/

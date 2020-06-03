@@ -30,14 +30,17 @@ export class story extends Component {
     return (
       <Layout title={story.title} backButton={true}>
         <main>
-          <h1 className='story-title'>
-            <a href={story.url}>{story.title}</a>
-          </h1>
+          <h1 className='story-title'>{story.title}</h1>
+          <p className='story-link'>
+            <a href={story.url}>View original post</a>
+          </p>
+
           <div className='story-details'>
             <strong>{story.points} points</strong>
             <strong>{story.comments_count} comments</strong>
             <strong>{story.time_ago}</strong>
           </div>
+
           {story.comments.length > 0 ? (
             <CommentList comments={story.comments} />
           ) : (
@@ -51,14 +54,16 @@ export class story extends Component {
               padding: 1em;
             }
             .story-title {
-              font-size: 1.2rem;
+              font-size: 1.8rem;
               margin: 0;
-              font-weight: 300;
+              font-weight: bold;
               padding-bottom: 0.5em;
-            }
-            .story-title a {
               color: #333;
+            }
+            .story-link {
               text-decoration: none;
+              font-size: 12px;
+              margin: 0 0 10px 0;
             }
             .story-title a:hover {
               text-decoration: underline;
