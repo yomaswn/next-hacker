@@ -3,6 +3,7 @@ import fetch from 'isomorphic-fetch';
 import Error from 'next/error';
 
 import StoryList from '../components/StoryList';
+import Layout from '../components/Layout';
 
 export default class index extends Component {
   static async getInitialProps() {
@@ -23,10 +24,9 @@ export default class index extends Component {
       return <Error statusCode={503} />;
     }
     return (
-      <div>
-        <h1>hacker news</h1>
+      <Layout title='Next Hacker' description='Hacker news build with next'>
         <StoryList stories={stories} />
-      </div>
+      </Layout>
     );
   }
 }
