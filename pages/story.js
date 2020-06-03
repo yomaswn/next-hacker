@@ -4,6 +4,7 @@ import Error from 'next/error';
 import Link from 'next/link';
 
 import Layout from '../components/Layout';
+import CommentList from '../components/CommentList';
 
 export class story extends Component {
   static async getInitialProps({ req, res, query }) {
@@ -38,6 +39,11 @@ export class story extends Component {
             <strong>{story.comments_count} comments</strong>
             <strong>{story.time_ago}</strong>
           </div>
+          {story.comments.length > 0 ? (
+            <CommentList comments={story.comments} />
+          ) : (
+            <div>no comment for this story</div>
+          )}
         </main>
 
         <style jsx>
